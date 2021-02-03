@@ -31,6 +31,10 @@ namespace AvaliacaoTecnica
             {
                 Console.WriteLine($"Exceção {e.Code}");
             }
+            catch
+            {
+                Console.WriteLine($"Exceção E4");
+            }
         }
     }
 }
