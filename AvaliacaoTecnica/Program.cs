@@ -4,7 +4,7 @@ using System.IO;
 
 namespace AvaliacaoTecnica
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -12,32 +12,31 @@ namespace AvaliacaoTecnica
 
             foreach (var testCase in testCases)
             {
-                ProcessTree(testCase.Split(' '));
+                try
+                {
+                    Console.WriteLine(ProcessTree(testCase.Split(' ')));
+                }
+                catch (TreatedException e)
+                {
+                    Console.WriteLine($"Exceção {e.Code}");
+                }
+                catch
+                {
+                    Console.WriteLine($"Exceção E4");
+                }
                 Console.WriteLine();
             }
         }
 
-        private static void  ProcessTree(string[] treeNodes)
+        public static string ProcessTree(string[] treeNodes)
         {
-            try
+            var tree = new Tree();
+            foreach (var treeNode in treeNodes)
             {
-                var tree = new Tree();
-                foreach (var treeNode in treeNodes)
-                {
-                    var items = treeNode.Split(',');
-                    tree.AddNodes(items[0], items[1]);
-                }
-
-                tree.Print();
+                var items = treeNode.Split(',');
+                tree.AddNodes(items[0], items[1]);
             }
-            catch (TreatedException e)
-            {
-                Console.WriteLine($"Exceção {e.Code}");
-            }
-            catch
-            {
-                Console.WriteLine($"Exceção E4");
-            }
+            return tree.Print();
         }
     }
 }

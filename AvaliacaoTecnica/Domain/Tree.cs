@@ -39,9 +39,9 @@ namespace AvaliacaoTecnica.Domain
             parent.EstablishRelationship(child);
         }
 
-        public void Print()
+        public string Print()
         {
-            Console.WriteLine(ConvertToPrintableString(Root));
+            return ConvertToPrintableString(Root);
         }
         #endregion Public Methods
 
@@ -61,7 +61,7 @@ namespace AvaliacaoTecnica.Domain
                 throw new TreatedException("E2");
 
             currentNode.WasPrinted = true;
-            var result = string.Empty;
+            string result;
             if (currentNode == Root)
             {
                 result = $"{currentNode.Content}[{ConvertChildrenToPrintableString(currentNode.Children)}{Environment.NewLine}]";
