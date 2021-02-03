@@ -1,3 +1,8 @@
 [A,B] [A,C] [B,G] [C,H] [E,F] [B,D] [C,E]
 [B,D] [D,E] [A,B] [C,F] [E,G] [A,C]
 [A,B] [A,C] [B,D] [D,C]
+[A,B] [A,C] [B,G] [C,H] [E,F] [B,D]
+[A,B] [A,C] [B,G] [C,H] [E,F] [B,D] [C,E] [B,K]
+[U,Z] [W,Y] [R,W] [S,U] [Q,S] [P,Q] [S,T] [W,X] [P,R] [U,V]
+
+[A,B]

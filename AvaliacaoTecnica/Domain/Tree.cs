@@ -64,10 +64,7 @@ namespace AvaliacaoTecnica.Domain
             var result = string.Empty;
             if (currentNode == Root)
             {
-                if (currentNode.Children.Count == 0)
-                    result = currentNode.Content;
-                else
-                    result = $"{currentNode.Content}[\n{ConvertToPrintableString(currentNode.Children[0])}\n{ConvertToPrintableString(currentNode.Children[1])}\n]";
+                result = $"{currentNode.Content}[{ConvertChildrenToPrintableString(currentNode.Children)}{Environment.NewLine}]";
             }
             else
             {
@@ -82,9 +79,13 @@ namespace AvaliacaoTecnica.Domain
         private string ConvertChildrenToPrintableString(List<TreeNode> children)
         {
             var result = string.Empty;
+            var newLine = string.Empty;
             foreach(var child in children)
             {
-                result += ConvertToPrintableString(child);
+                if (child.Parent == Root)
+                    newLine = Environment.NewLine;
+
+                result += newLine + ConvertToPrintableString(child);
             }
             return result;
         }

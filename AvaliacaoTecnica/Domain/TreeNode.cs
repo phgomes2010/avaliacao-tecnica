@@ -19,7 +19,7 @@ namespace AvaliacaoTecnica.Domain
         public void EstablishRelationship(TreeNode child)
         {
             if(Children.Count == 2)
-                new TreatedException("E1");
+                throw new TreatedException("E1");
 
             if (Children.Count == 1 && string.Compare(child.Content, Children.First().Content) < 0)
             {
