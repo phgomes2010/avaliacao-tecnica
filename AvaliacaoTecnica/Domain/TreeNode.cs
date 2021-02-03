@@ -19,7 +19,7 @@ namespace AvaliacaoTecnica.Domain
         {
             if(Children.Count == 2)
             {
-                new Exception("E1 - Mais de 2 filhos");
+                new TreatedException("E1");
             }
 
             child.Parent = this;

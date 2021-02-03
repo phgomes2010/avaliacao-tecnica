@@ -13,7 +13,7 @@ namespace AvaliacaoTecnica.Domain
             {
                 var roots = Nodes.FindAll(tn => tn.Parent == null);
                 if (roots.Count > 1)
-                    throw new Exception("E3 - Raízes múltiplas");
+                    throw new TreatedException("E3");
 
                 return roots.First();
             }
@@ -58,7 +58,7 @@ namespace AvaliacaoTecnica.Domain
         private string ConvertToPrintableString(TreeNode currentNode)
         {
             if(currentNode.WasPrinted)
-                throw new Exception("E2 - Ciclo presente");
+                throw new TreatedException("E2");
 
             currentNode.WasPrinted = true;
             var result = string.Empty;

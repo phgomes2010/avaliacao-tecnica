@@ -24,11 +24,12 @@ namespace AvaliacaoTecnica
                     }
 
                     tree.Print();
+                    Console.WriteLine();
                 }
             }
-            catch (Exception e)
+            catch (TreatedException e)
             {
-                new Exception("E4 - Qualquer outro erro");
+                Console.WriteLine($"Exceção {e.Code}");
             }
         }
     }

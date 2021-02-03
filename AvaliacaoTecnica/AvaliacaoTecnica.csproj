@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\TreatedException.cs" />
     <Compile Include="Domain\Tree.cs" />
     <Compile Include="Domain\TreeNode.cs" />
     <Compile Include="Program.cs" />
