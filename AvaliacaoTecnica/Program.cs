@@ -8,20 +8,27 @@ namespace AvaliacaoTecnica
     {
         static void Main(string[] args)
         {
-            var testCases = File.ReadAllText("test-cases.txt").Replace("[", "").Replace("]", "").Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-
-            foreach (var testCase in testCases)
+            try
             {
-                var treeNodes = testCase.Split(' ');
-                var tree = new Tree();
+                var testCases = File.ReadAllText("test-cases.txt").Replace("[", "").Replace("]", "").Split(new[] { Environment.NewLine }, StringSplitOptions.None);
 
-                foreach (var treeNode in treeNodes)
+                foreach (var testCase in testCases)
                 {
-                    var items = treeNode.Split(',');
-                    tree.AddNode(items[0], items[1]);
-                }
+                    var treeNodes = testCase.Split(' ');
+                    var tree = new Tree();
 
-                tree.Print();
+                    foreach (var treeNode in treeNodes)
+                    {
+                        var items = treeNode.Split(',');
+                        tree.AddNodes(items[0], items[1]);
+                    }
+
+                    tree.Print();
+                }
+            }
+            catch
+            {
+                new Exception("E4 - Qualquer outro erro");
             }
         }
     }
