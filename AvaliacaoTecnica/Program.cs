@@ -26,7 +26,7 @@ namespace AvaliacaoTecnica
                     tree.Print();
                 }
             }
-            catch
+            catch (Exception e)
             {
                 new Exception("E4 - Qualquer outro erro");
             }
