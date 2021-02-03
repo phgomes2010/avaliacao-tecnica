@@ -1,0 +1,3 @@
+[A,B] [A,C] [B,G] [C,H] [E,F] [B,D] [C,E]
+[B,D] [D,E] [A,B] [C,F] [E,G] [A,C]
+[A,B] [A,C] [B,D] [D,C]
